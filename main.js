@@ -1,5 +1,5 @@
 import express from 'express'
-import customerDetailsRoutes from '../routes/customerDetails.route.js'
+import customerDetailsRoutes from './routes/customerDetails.route.js'
 import mongoose from "mongoose";
 import dotenv from 'dotenv'
 import cros from 'cors'
