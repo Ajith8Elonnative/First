@@ -1,4 +1,5 @@
 import express from 'express'
+import employeeDetailsRoutes from './routes/employeeDetails.route.js'
 import customerDetailsRoutes from './routes/customerDetails.route.js'
 import mongoose from "mongoose";
 import dotenv from 'dotenv'
@@ -20,7 +21,8 @@ mongoose.connect(process.env.MONGODB_URL)
 .then(() =>console.log("Mongodb connected"))
 .catch((error) =>console.error("Mongo db is not connected"))
 
-app.use('/CustomerDetails', customerDetailsRoutes)
+app.use('/EmployeeDetails', employeeDetailsRoutes)
+app.use('/CustomerDetails',customerDetailsRoutes)
 app.listen(PORT, () => {
     console.log(`successful running ${PORT}`)
 })
