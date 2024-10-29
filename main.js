@@ -12,6 +12,10 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 
+app.get('/',(req,res)=>{
+    res.send("Test")
+})
+
 mongoose.connect(process.env.MONGODB_URL)
 .then(() =>console.log("Mongodb connected"))
 .catch((error) =>console.error("Mongo db is not connected"))
