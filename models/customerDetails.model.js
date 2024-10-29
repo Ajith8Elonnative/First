@@ -12,7 +12,7 @@ const schema = new Schema({
     mobileNo: {
         type: Number,
         required: true,
-        unique: true, 
+        unique: true,
         maxlength: 10,
         validate: {
             validator: function (v) {
@@ -23,6 +23,10 @@ const schema = new Schema({
     },
     email: {
         type: String,
+        required: true
+    },
+    country: {
+        type:String,
         required: true
     },
     status: {

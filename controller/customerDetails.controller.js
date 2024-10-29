@@ -25,6 +25,7 @@ export const customerRegister = async (req, res) => {
                 companyName: req.body.companyName,
                 mobileNo: req.body.mobileNo,
                 email: req.body.email,
+                country:req.body.country,
                 status: req.body.status
             }
             )
@@ -44,6 +45,7 @@ export const customerUpdate = async (req, res) => {
                 companyName: req.body.companyName,
                 phoneNo: req.body.phoneNo,
                 email: req.body.email,
+                country:req.body.country,
                 status: req.body.status
             },
             {
