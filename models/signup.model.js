@@ -1,15 +1,8 @@
 import { model, Schema } from "mongoose";
 
+
 const shema = new Schema({
-    // id:{
-    //     type: String,
-    //     required:true
-    // },
-    empName: {
-        type:String,
-        required:true
-    },
-    email: {
+    userName:{
         type:String,
         required:true,
         unique: true,
@@ -19,17 +12,10 @@ const shema = new Schema({
           'Please enter a valid email address' // Custom error message
         ]
     },
-    projectName:{
+    password:{
         type:String,
         required:true
-    },
-    reason: {
-        type: String,
-        required:true
-    },
-    description: {
-        type: String
     }
-
 })
-export const employee = model('Employee',shema )
+export const User = model('user',shema)
+

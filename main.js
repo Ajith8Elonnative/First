@@ -1,6 +1,7 @@
 import express from 'express'
 import employeeDetailsRoutes from './routes/employeeDetails.route.js'
 import customerDetailsRoutes from './routes/customerDetails.route.js'
+import signupRoutes from './routes/signup.route.js'
 import mongoose from "mongoose";
 import dotenv from 'dotenv'
 import cros from 'cors'
@@ -14,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 
 app.get('/',(req,res)=>{
-    res.send("Test")
+    res.send("this is for Test")
 })
 
 mongoose.connect(process.env.MONGODB_URL)
@@ -23,6 +24,8 @@ mongoose.connect(process.env.MONGODB_URL)
 
 app.use('/EmployeeDetails', employeeDetailsRoutes)
 app.use('/CustomerDetails',customerDetailsRoutes)
+app.use('/api',signupRoutes)
+
 app.listen(PORT, () => {
     console.log(`successful running ${PORT}`)
 })

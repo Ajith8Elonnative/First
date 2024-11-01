@@ -19,6 +19,7 @@ export const registerEmployeeDetails = async (req, res) => {
             
             empName: req.body.empName,
             email: req.body.email,
+            projectName:req.body.projectName,
             reason: req.body.reason,
             description: req.body.description
         })
@@ -37,6 +38,7 @@ export const updateEmployeeDetails = async (req, res) => {
                 
                 empName: req.body.empName,
                 email: req.body.email,
+                projectName:req.body.projectName,
                 reason: req.body.reason,
                 description: req.body.description
             },
