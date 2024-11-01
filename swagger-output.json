@@ -1,0 +1,25 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "API Documentation for signup and login",
+      "description": "This is a sample signup and login api using express, mongodb and documentation with swaggger",
+      "version": "1.0.0"
+    },
+    "host": "localhost:4000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+    "paths": {
+        "/": {
+            "get": {
+              "description": "",
+              "responses": {
+                "200": {
+                  "description": "OK"
+                }
+              }
+            }
+          }
+    }
+  }
