@@ -6,8 +6,7 @@ import mongoose from "mongoose";
 import dotenv from 'dotenv'
 import cros from 'cors'
 import swaggerUi from 'swagger-ui-express';
-import swaggerDoc from './swagger-output.json' assert { type: 'json' };
-
+import swaggerDoc from './swagger-output.json' 
 const app = express();
 const PORT = 4000
 
