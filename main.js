@@ -5,8 +5,7 @@ import signupRoutes from './routes/signup.route.js'
 import mongoose from "mongoose";
 import dotenv from 'dotenv'
 import cros from 'cors'
-import swaggerUi from 'swagger-ui-express';
-import swaggerDoc from './swagger-output.json' 
+
 const app = express();
 const PORT = 4000
 
@@ -15,7 +14,7 @@ app.use(cros())
 dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDoc));
+
 app.get('/',(req,res)=>{
     res.send("this is for Test")
 })
