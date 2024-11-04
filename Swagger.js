@@ -5,7 +5,7 @@ const doc = {
     title: "User Crud API's",
     description: "Version 2.0"
   },
-  host: "signup-and-login.onrender.com",
+  host: "https://signup-and-login.onrender.com",
   basePath:"/",
 };
 
