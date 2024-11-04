@@ -5,8 +5,14 @@ const doc = {
     title: "User Crud API's",
     description: "Version 2.0"
   },
-  host: "signup-and-login.onrender.com",
-  basePath:"/",
+  servers: [
+    {
+      url: 'https://signup-and-login.onrender.com'  // Replace with your Render deployment URL
+    }
+  ],
+
+  // host: "signup-and-login.onrender.com",
+  // basePath:"/",
 };
 
 const outputFile = "./swagger-output.json";

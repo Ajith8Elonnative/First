@@ -5,7 +5,12 @@
     "description": "Version 2.0",
     "version": "1.0.0"
   },
-  "host": "signup-and-login.onrender.com",
+  "host": "localhost:3000",
+  "servers": [
+    {
+      "url": "https://signup-and-login.onrender.com"
+    }
+  ],
   "basePath": "/",
   "schemes": [
     "http"
