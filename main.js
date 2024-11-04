@@ -9,10 +9,8 @@ const swaggerUi = require('swagger-ui-express')
 const swaggerDocument = require('./swagger-output.json') 
 const bodyparser = require('body-parser')
 
-
 const app = express();
 const PORT = 4000
-
 
 app.use(cors())
 app.use(bodyparser.json())
