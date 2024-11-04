@@ -68,6 +68,9 @@
                 "staffId": {
                   "example": "any"
                 },
+                "empName": {
+                  "example": "any"
+                },
                 "taskName": {
                   "example": "any"
                 },
@@ -111,6 +114,9 @@
               "type": "object",
               "properties": {
                 "staffId": {
+                  "example": "any"
+                },
+                "empName": {
                   "example": "any"
                 },
                 "taskName": {
