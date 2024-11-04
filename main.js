@@ -4,17 +4,18 @@ const customerDetailsRoutes = require('./routes/customerDetails.route.js')
 const signupRoutes = require('./routes/signup.route.js')
 const mongoose =require("mongoose");
 const dotenv= require('dotenv')
-const cros = require('cors')
+const cors = require('cors')
 const swaggerUi = require('swagger-ui-express')
 const swaggerDocument = require('./swagger-output.json') 
-
+const bodyparser = require('body-parser')
 
 
 const app = express();
 const PORT = 4000
 
 
-app.use(cros())
+app.use(cors())
+app.use(bodyparser.json())
 dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
