@@ -11,8 +11,8 @@ const doc = {
     }
   ],
 
-  // host: "signup-and-login.onrender.com",
-  // basePath:"/",
+  host: "https://signup-and-login.onrender.com",
+   basePath:"/",
 };
 
 const outputFile = "./swagger-output.json";
