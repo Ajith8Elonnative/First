@@ -5,9 +5,9 @@ const schema = new mongoose.Schema({
         type:String,
         required:true
     }, 
-    staffName:{
+    empName:{
         type:String,
-        required:true
+        
     },
     taskName:{
         type:String,

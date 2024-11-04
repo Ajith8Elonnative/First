@@ -22,9 +22,10 @@ exports.getId =async(req,res) =>{
 
 exports.create = async (req, res) => {
     try {
-        const {staffId,taskName,date,status,description} = req.body
+        const {staffId,empName,taskName,date,status,description} = req.body
         const newEmployee =await results.create({
             staffId,
+            empName,
             taskName,
             date,
             status ,
@@ -46,6 +47,7 @@ exports.update = async (req, res) => {
             {
                 
                 staffId:req.body.staffId,
+                empName:req.body.empName,
                 taskName:req.body.taskName,
                 date :req.body.date,
                 status :req.body.status,
