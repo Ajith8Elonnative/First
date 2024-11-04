@@ -1,6 +1,6 @@
-import { model, Schema } from "mongoose";
+const mongoose = require('mongoose');
 
-const shema = new Schema({
+const schema = new mongoose.Schema({
     staffId:{
         type:String,
         required:true
@@ -28,5 +28,6 @@ const shema = new Schema({
     }
 
 })
-export const results = model('Employee',shema )
+const result = new mongoose.model("Employee",schema)
+module.exports = result
 

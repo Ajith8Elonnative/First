@@ -1,23 +1,16 @@
-import express from 'express'
-import {
-    deleteEmployeeDetails,
-    getEmployeeDetails,
-    getId,
-    registerEmployeeDetails,
-    updateEmployeeDetails
-} from '../controller/employeeDetails.controller.js'
-
+const express = require("express")
+const usercontroler = require('../controller/employeeDetails.controller.js')
 
 const route = express.Router()
 
-route.get('/getAll', getEmployeeDetails)
+route.get('/getAll', usercontroler.getAll)
 
-route.get('/getId/:id', getId)
+route.get('/getId/:id', usercontroler.getId)
 
-route.post('/register', registerEmployeeDetails)
+route.post('/create', usercontroler.create)
 
-route.put('/update/:id', updateEmployeeDetails)
+route.put('/update/:id', usercontroler.update)
 
-route.delete('/delete/:id', deleteEmployeeDetails)
+route.delete('/delete/:id', usercontroler.delete)
 
-export default route;
+module.exports = route

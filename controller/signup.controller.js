@@ -1,8 +1,7 @@
-import { User } from '../models/signup.model.js'
-import hashGen from '../hashPassword/hashing.js'
-import bcrypt from 'bcrypt'
+const User = require('../models/signup.model.js')
+const bcrypt = require('bcrypt')
 
-export const signupGetall = async (req, res) => {
+exports.getall = async (req, res) => {
     try {
         const sign = await User.find()
         res.status(200).json(sign)
@@ -11,7 +10,7 @@ export const signupGetall = async (req, res) => {
     }
 }
 
-export const signupUser = async (req, res) => {
+exports.signupUser = async (req, res) => {
     try {
         const {userName, password } = req.body;
         const hashedPassword = await bcrypt.hash(password, 10);
@@ -26,7 +25,7 @@ export const signupUser = async (req, res) => {
     }
 }
 
-export const loginUser =async (req,res) =>{
+exports.loginUser =async (req,res) =>{
     try {
         const {userName,password} = req.body
         console.log(userName, password)

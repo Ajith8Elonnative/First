@@ -1,13 +1,13 @@
-import express from 'express'
-import employeeDetailsRoutes from './routes/employeeDetails.route.js'
-import customerDetailsRoutes from './routes/customerDetails.route.js'
-import signupRoutes from './routes/signup.route.js'
-import mongoose from "mongoose";
-import dotenv from 'dotenv'
-import cros from 'cors'
-import swaggerUi from 'swagger-ui-express'
-import swaggerDocument from './swagger-output.json' assert { type: 'json' };
- 
+const express = require('express')
+const employeeDetailsRoutes = require('./routes/employeeDetails.route.js')
+const customerDetailsRoutes = require('./routes/customerDetails.route.js')
+const signupRoutes = require('./routes/signup.route.js')
+const mongoose =require("mongoose");
+const dotenv= require('dotenv')
+const cros = require('cors')
+const swaggerUi = require('swagger-ui-express')
+const swaggerDocument = require('./swagger-output.json') 
+
 
 
 const app = express();
@@ -23,17 +23,17 @@ app.use(express.urlencoded({ extended: true }))
 // app.use('/docs', swaggerDoc.setup(swaggerDocumentation))
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
     res.send("this is for Test")
 })
 
 mongoose.connect(process.env.MONGODB_URL)
-.then(() =>console.log("Mongodb connected"))
-.catch((error) =>console.error("Mongo db is not connected"))
+    .then(() => console.log("Mongodb connected"))
+    .catch((error) => console.error("Mongo db is not connected"))
 
 app.use('/EmployeeDetails', employeeDetailsRoutes)
-app.use('/CustomerDetails',customerDetailsRoutes)
-app.use('/api',signupRoutes)
+app.use('/CustomerDetails', customerDetailsRoutes)
+app.use('/api', signupRoutes)
 
 app.listen(PORT, () => {
     console.log(`successful running ${PORT}`)

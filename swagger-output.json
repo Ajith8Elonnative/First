@@ -5,7 +5,7 @@
     "description": "Version 2.0",
     "version": "1.0.0"
   },
-  "host": "localhost:4000",
+  "host": "https://signup-and-login.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"
@@ -55,7 +55,7 @@
         }
       }
     },
-    "/EmployeeDetails/register": {
+    "/EmployeeDetails/create": {
       "post": {
         "description": "",
         "parameters": [
@@ -173,7 +173,7 @@
         }
       }
     },
-    "/CustomerDetails/register": {
+    "/CustomerDetails/create": {
       "post": {
         "description": "",
         "parameters": [

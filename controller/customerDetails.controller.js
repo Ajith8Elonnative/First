@@ -1,6 +1,7 @@
-import { customer } from "../models/customerDetails.model.js"
+const customer = require("../models/customerDetails.model.js")
+const express = require('express')
 
-export const customerGetAll = async (req, res) => {
+exports.getAll = async (req, res) => {
     try {
         const Customer = await customer.find()
         res.status(200).json(Customer)
@@ -9,9 +10,8 @@ export const customerGetAll = async (req, res) => {
     }
 }
 
-export const customerRegister = async (req, res) => {
+exports.create = async (req, res) => {
    
-    
     try {
         
         const existingEmail = await customer.findOne({ email: req.body.email })
@@ -36,7 +36,7 @@ export const customerRegister = async (req, res) => {
         res.status(400).json({ message: error.message })
     }
 }
-export const customerUpdate = async (req, res) => {
+exports.update = async (req, res) => {
     try {
         const id = req.params.id
         const customerUpdate = await customer.findByIdAndUpdate({ _id: id },
@@ -58,7 +58,7 @@ export const customerUpdate = async (req, res) => {
     }
 }
 
-export const customerDelete = async (req, res) => {
+exports.delete = async (req, res) => {
     try {
         await customer.findByIdAndDelete({ _id: req.params.id })
         res.json({ messagea: "deleted successfully" })

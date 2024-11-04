@@ -1,6 +1,6 @@
-import {results} from "../models/employeeDetails.model.js";
+const results = require("../models/employeeDetails.model.js")
 
-export const getEmployeeDetails = async (req, res) => {
+exports.getAll = async (req, res) => {
     try {
         const empDetails = await results.find()
         res.status(200).json(empDetails)
@@ -9,7 +9,7 @@ export const getEmployeeDetails = async (req, res) => {
     }
 }
 
-export const getId =async(req,res) =>{
+exports.getId =async(req,res) =>{
     try {
         const id =req.params.id
         const getId = await results.findOne({_id:id})
@@ -20,7 +20,7 @@ export const getId =async(req,res) =>{
     }
 }
 
-export const registerEmployeeDetails = async (req, res) => {
+exports.create = async (req, res) => {
     try {
         const {staffId,taskName,date,status,description} = req.body
         const newEmployee =await results.create({
@@ -39,7 +39,7 @@ export const registerEmployeeDetails = async (req, res) => {
     }
 }
 
-export const updateEmployeeDetails = async (req, res) => {
+exports.update = async (req, res) => {
     try {
 
         const update = await results.findByIdAndUpdate({ _id: req.params.id },
@@ -61,7 +61,7 @@ export const updateEmployeeDetails = async (req, res) => {
     }
 }
 
-export const deleteEmployeeDetails =async (req, res) => {
+exports.delete =async (req, res) => {
     try {
         const id = req.params.id
         await results.findByIdAndDelete({_id:id})
