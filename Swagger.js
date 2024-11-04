@@ -1,10 +1,11 @@
-const swaggerAutogen = require("swagger-autogen")();
+// const swaggerAutogen = require("swagger-autogen")();
+import swaggerAutogen from 'swagger-autogen'
 const doc = {
   info: {
     title: "User Crud API's",
     description: "Version 2.0"
   },
-  host: "localhost:4000",
+  host: "https://signup-and-login.onrender.com",
   basePath:"/",
 };
 

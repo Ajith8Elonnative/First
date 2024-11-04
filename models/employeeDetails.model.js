@@ -4,6 +4,10 @@ const shema = new Schema({
     staffId:{
         type:String,
         required:true
+    }, 
+    staffName:{
+        type:String,
+        required:true
     },
     taskName:{
         type:String,

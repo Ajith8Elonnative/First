@@ -3,5 +3,4 @@ node_modules
 .env 
 script.js
 user.js
-swagger-output.json
-Swagger.js
+
