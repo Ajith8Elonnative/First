@@ -3,7 +3,7 @@ const role = require('../models/customerDetails.model.js')
 exports.getAll = async (req, res) => {
     try {
         const empDetails = await results.find()
-        res.status(200).json(empDetails,role.role)
+        res.status(200).json([empDetails,role.role])
     } catch (error) {
         res.status(400).json({ message: error.message })
     }
