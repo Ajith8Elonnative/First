@@ -5,12 +5,7 @@ const doc = {
     title: "User Crud API's",
     description: "Version 2.0"
   },
-  servers: [
-    {
-      url: 'https://signup-and-login.onrender.com'  // Replace with your Render deployment URL
-    }
-  ],
-
+ 
   host: "https://signup-and-login.onrender.com",
    basePath:"/",
 };

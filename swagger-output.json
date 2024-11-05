@@ -6,14 +6,10 @@
     "version": "1.0.0"
   },
   "host": "https://signup-and-login.onrender.com",
-  "servers": [
-    {
-      "url": "https://signup-and-login.onrender.com"
-    }
-  ],
   "basePath": "/",
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/": {

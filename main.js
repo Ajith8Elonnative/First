@@ -13,7 +13,9 @@ const app = express();
 const PORT = 4000
 
 app.use(cors({
-    origin:"https://signup-and-login.onrender.com"
+    origin:"https://signup-and-login.onrender.com",
+    methods: 'GET,POST,PUT,DELETE',
+    allowedHeaders: 'Content-Type, Authorization'
 }))
 app.use(bodyparser.json())
 dotenv.config();
