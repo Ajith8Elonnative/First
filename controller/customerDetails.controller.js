@@ -20,13 +20,15 @@ exports.create = async (req, res) => {
            
            return res.json({ message: "this email already exist please try another email" })
         }
+            const {customerName,companyName,mobileNo,email,role,country,status} = req.body
             const newCustomer =await new customer({
-                customerName: req.body.customerName,
-                companyName: req.body.companyName,
-                mobileNo: req.body.mobileNo,
-                email: req.body.email,
-                country:req.body.country,
-                status: req.body.status
+                customerName,
+                companyName,
+                mobileNo,
+                email,
+                role,
+                country,
+                status 
             }
             )
             const Customer = await newCustomer.save()
@@ -39,14 +41,16 @@ exports.create = async (req, res) => {
 exports.update = async (req, res) => {
     try {
         const id = req.params.id
+        const {customerName,companyName,mobileNo,email,role,country,status} = req.body
         const customerUpdate = await customer.findByIdAndUpdate({ _id: id },
             {
-                customerName: req.body.customerName,
-                companyName: req.body.companyName,
-                phoneNo: req.body.phoneNo,
-                email: req.body.email,
-                country:req.body.country,
-                status: req.body.status
+                customerName,
+                companyName,
+                mobileNo,
+                email,
+                role,
+                country,
+                status   
             },
             {
                 new: true

@@ -22,11 +22,12 @@ exports.getId =async(req,res) =>{
 
 exports.create = async (req, res) => {
     try {
-        const {staffId,empName,taskName,date,status,description} = req.body
+        const {staffId,empName,taskName,role,date,status,description} = req.body
         const newEmployee =await results.create({
             staffId,
             empName,
             taskName,
+            role,
             date,
             status ,
             description
@@ -42,16 +43,16 @@ exports.create = async (req, res) => {
 
 exports.update = async (req, res) => {
     try {
-
+        const {staffId,empName,taskName,role,date,status,description} = req.body
         const update = await results.findByIdAndUpdate({ _id: req.params.id },
             {
-                
-                staffId:req.body.staffId,
-                empName:req.body.empName,
-                taskName:req.body.taskName,
-                date :req.body.date,
-                status :req.body.status,
-                description: req.body.description
+            staffId,
+            empName,
+            taskName,
+            role,
+            date,
+            status ,
+            description
             },
             {
                 new: true

@@ -81,6 +81,9 @@
                 "taskName": {
                   "example": "any"
                 },
+                "role": {
+                  "example": "any"
+                },
                 "date": {
                   "example": "any"
                 },
@@ -127,6 +130,9 @@
                   "example": "any"
                 },
                 "taskName": {
+                  "example": "any"
+                },
+                "role": {
                   "example": "any"
                 },
                 "date": {
@@ -208,6 +214,9 @@
                 "companyName": {
                   "example": "any"
                 },
+                "role": {
+                  "example": "any"
+                },
                 "country": {
                   "example": "any"
                 },
@@ -250,10 +259,13 @@
                 "companyName": {
                   "example": "any"
                 },
-                "phoneNo": {
+                "mobileNo": {
                   "example": "any"
                 },
                 "email": {
+                  "example": "any"
+                },
+                "role": {
                   "example": "any"
                 },
                 "country": {
