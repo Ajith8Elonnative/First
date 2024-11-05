@@ -5,11 +5,10 @@
     "description": "Version 2.0",
     "version": "1.0.0"
   },
-  "host": "https://signup-and-login.onrender.com",
+  "host": "signup-and-login.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "http"
   ],
   "paths": {
     "/": {
