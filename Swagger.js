@@ -6,8 +6,11 @@ const doc = {
     description: "Version 2.0"
   },
  
-  host: "signup-and-login.onrender.com",
+  host: "https://signup-and-login.onrender.com",
    basePath:"/",
+   schemes: ["https"],  // Use ["http", "https"] if the API can be accessed over both protocols.
+   consumes: ["application/json"],
+   produces: ["application/json"]
 };
 
 const outputFile = "./swagger-output.json";
