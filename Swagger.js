@@ -6,7 +6,7 @@ const doc = {
     description: "Version 2.0"
   },
  
-  host: "https://signup-and-login.onrender.com",
+  host: "signup-and-login.onrender.com",
    basePath:"/",
 };
 
