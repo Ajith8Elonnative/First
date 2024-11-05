@@ -12,11 +12,12 @@ const bodyparser = require('body-parser')
 const app = express();
 const PORT = 4000
 
-app.use(cors({
-    origin:"https://signup-and-login.onrender.com",
-    methods: 'GET,POST,PUT,DELETE',
-    allowedHeaders: 'Content-Type, Authorization'
-}))
+// app.use(cors({
+//     origin:"https://signup-and-login.onrender.com",
+//     methods: 'GET,POST,PUT,DELETE',
+//     allowedHeaders: 'Content-Type, Authorization'
+// }))
+app.use(cors());
 app.use(bodyparser.json())
 dotenv.config();
 app.use(express.json());
