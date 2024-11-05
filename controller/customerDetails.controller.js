@@ -1,4 +1,5 @@
 const customer = require("../models/customerDetails.model.js")
+
 const express = require('express')
 
 exports.getAll = async (req, res) => {

@@ -1,9 +1,9 @@
 const results = require("../models/employeeDetails.model.js")
-
+const role = require('../models/customerDetails.model.js')
 exports.getAll = async (req, res) => {
     try {
         const empDetails = await results.find()
-        res.status(200).json(empDetails)
+        res.status(200).json(empDetails,role.role)
     } catch (error) {
         res.status(400).json({ message: error.message })
     }
@@ -22,12 +22,11 @@ exports.getId =async(req,res) =>{
 
 exports.create = async (req, res) => {
     try {
-        const {staffId,empName,taskName,role,date,status,description} = req.body
+        const {staffId,empName,taskName,date,status,description} = req.body
         const newEmployee =await results.create({
             staffId,
             empName,
             taskName,
-            role,
             date,
             status ,
             description
