@@ -6,9 +6,9 @@ const doc = {
     description: "Version 2.0"
   },
  
-  host: "https://signup-and-login.onrender.com",
+  host: "signup-and-login.onrender.com",
    basePath:"/",
-   schemes: ["https"],  // Use ["http", "https"] if the API can be accessed over both protocols.
+   schemes: ["https","http"],  // Use ["http", "https"] if the API can be accessed over both protocols.
    consumes: ["application/json"],
    produces: ["application/json"]
 };
