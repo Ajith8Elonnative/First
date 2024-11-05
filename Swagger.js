@@ -5,7 +5,6 @@ const doc = {
     title: "User Crud API's",
     description: "Version 2.0"
   },
- 
   host: "signup-and-login.onrender.com",
    basePath:"/",
    schemes: ["https","http"],  // Use ["http", "https"] if the API can be accessed over both protocols.
