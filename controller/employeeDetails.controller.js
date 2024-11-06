@@ -33,18 +33,17 @@ exports.getAll = async(req,res)=>{
         if(!employeeStaffdata){
             return res.status(404).json({message:"employeestaffdata not found"})
         }
-        customerData.forEach(customer => {
+        customerData.forEach((customer,index) => {
             employeeStaffdata.forEach(employee => {
                 if (customer._id.toString() === employee.staffId) {
-                    console.log(`${customer.id}: ${customer.role}`);
-                    const exactRole = customer.role
-                    
-                    const push = employeeStaffdata.push({exactRole})
-                   console.log(push)
+                    console.log(`${customer.id}: ${customer.role}`);                 
+                    const exactRole =customer.role
+                    employee.role = exactRole; 
+                  
                 }
             });
         });
-        
+        console.log(employeeStaffdata)
         res.status(200).json(employeeStaffdata)
       
     }catch(error){
