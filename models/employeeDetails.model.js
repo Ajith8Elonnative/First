@@ -15,7 +15,7 @@ const schema = new mongoose.Schema({
     },
     role:{
         type:String,
-        required:true
+       
     },
     date:{
         type:Date,
