@@ -37,7 +37,6 @@ exports.getAllrole = async(req,res)=>{
             employeeStaffdata.forEach(employee => {
                 if (customer._id.toString() === employee.staffId) {
                     console.log(`${customer.id}: ${customer.role}`);
-                    
                     const exactRole = customer.role
                    
                 }
