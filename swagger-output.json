@@ -91,7 +91,7 @@
         }
       }
     },
-    "/EmployeeDetails/getAllrole": {
+    "/EmployeeDetails/getAll": {
       "get": {
         "description": "",
         "responses": {

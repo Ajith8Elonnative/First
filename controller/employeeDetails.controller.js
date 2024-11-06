@@ -23,7 +23,7 @@ const Role = require('../models/customerDetails.model.js')
 //     }
 // }
 
-exports.getAllrole = async(req,res)=>{
+exports.getAll = async(req,res)=>{
     try{
         const customerData = await Role.find()
         if(!customerData){
@@ -38,11 +38,13 @@ exports.getAllrole = async(req,res)=>{
                 if (customer._id.toString() === employee.staffId) {
                     console.log(`${customer.id}: ${customer.role}`);
                     const exactRole = customer.role
-                   
+                    
+                    const push = employeeStaffdata.push({exactRole})
+                   console.log(push)
                 }
             });
         });
-        console.log(employeeStaffdata)
+        
         res.status(200).json(employeeStaffdata)
       
     }catch(error){
