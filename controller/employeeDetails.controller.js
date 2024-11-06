@@ -43,7 +43,7 @@ exports.getAll = async(req,res)=>{
                 }
             });
         });
-        console.log(employeeStaffdata)
+        // console.log(employeeStaffdata)
         res.status(200).json(employeeStaffdata)
       
     }catch(error){
