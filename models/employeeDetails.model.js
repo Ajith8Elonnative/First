@@ -11,7 +11,7 @@ const schema = new mongoose.Schema({
     },
     taskName:{
         type:String,
-        required:true
+       
     },
     role:{
         type:String,

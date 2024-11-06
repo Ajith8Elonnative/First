@@ -1,11 +1,52 @@
 const results = require("../models/employeeDetails.model.js")
-const role = require('../models/customerDetails.model.js')
-exports.getAll = async (req, res) => {
-    try {
-        const empDetails = await results.find()
-        res.status(200).json([empDetails,role.role])
-    } catch (error) {
-        res.status(400).json({ message: error.message })
+const Role = require('../models/customerDetails.model.js')
+// exports.getAll = async (req, res) => {
+//     try {
+   
+//         const empDetails = await results.find()
+//         const empMap = await empDetails.map(emp =>({
+//             staffId:emp.staffId
+//         }))
+
+//         const getCust = await Role.find()
+
+//         const custMap = await getCust.map(customer =>({
+//             id:customer.id
+//         }))
+//         console.log(custMap)
+//         console.log(empMap)
+      
+//         res.status(200).json(empDetails)
+       
+//     } catch (error) {
+//         res.status(400).json({ message: error.message })
+//     }
+// }
+
+exports.getAllrole = async(req,res)=>{
+    try{
+        const customerData = await Role.find()
+        if(!customerData){
+            return res.status(404).json({message:"customerdetails not found"})
+        }
+        const employeeStaffdata = await results.find()
+        if(!employeeStaffdata){
+            return res.status(404).json({message:"employeestaffdata not found"})
+        }
+        customerData.forEach(customer => {
+            employeeStaffdata.forEach(employee => {
+                if (customer._id.toString() === employee.staffId) {
+                    console.log(`${customer.customerName}: ${customer.role}`);
+                    const exactRole = customer.role
+                    res.status(200).json({exactRole})
+                }
+            });
+        });
+
+        
+
+    }catch(error){
+        res.status(500).json({message:"Internal server error"})
     }
 }
 
@@ -72,3 +113,26 @@ exports.delete =async (req, res) => {
         res.status(500).json({message:error.message})
     }
 } 
+exports.getrole = async (req, res) => {
+    try {
+        const id = req.params.id;
+        
+        // Fetch the customer by _id
+        const customer = await Role.findById(id);
+        
+        // Check if the customer exists
+        if (!customer) {
+            return res.status(404).json({ message: "Customer not found" });
+        }
+
+        // Retrieve the role from the customer document
+        const role = customer.role;
+        const country = customer.country
+        
+        // Respond with the role
+        res.json({ role ,country});
+    } catch (error) {
+        console.error("Error fetching role:", error);
+        res.status(500).json({ message: "Server error" });
+    }
+};
