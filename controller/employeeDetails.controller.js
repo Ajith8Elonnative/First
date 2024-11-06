@@ -38,7 +38,7 @@ exports.getAllrole = async(req,res)=>{
                 if (customer._id.toString() === employee.staffId) {
                     console.log(`${customer.customerName}: ${customer.role}`);
                     const exactRole = customer.role
-                    res.status(200).json({exactRole})
+                    res.status(200).json(employeeStaffdata)
                 }
             });
         });
