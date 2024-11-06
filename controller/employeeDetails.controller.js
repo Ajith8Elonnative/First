@@ -1,27 +1,5 @@
 const results = require("../models/employeeDetails.model.js")
 const Role = require('../models/customerDetails.model.js')
-// exports.getAll = async (req, res) => {
-//     try {
-   
-//         const empDetails = await results.find()
-//         const empMap = await empDetails.map(emp =>({
-//             staffId:emp.staffId
-//         }))
-
-//         const getCust = await Role.find()
-
-//         const custMap = await getCust.map(customer =>({
-//             id:customer.id
-//         }))
-//         console.log(custMap)
-//         console.log(empMap)
-      
-//         res.status(200).json(empDetails)
-       
-//     } catch (error) {
-//         res.status(400).json({ message: error.message })
-//     }
-// }
 
 exports.getAll = async(req,res)=>{
     try{
@@ -36,7 +14,7 @@ exports.getAll = async(req,res)=>{
         customerData.forEach((customer,index) => {
             employeeStaffdata.forEach(employee => {
                 if (customer._id.toString() === employee.staffId) {
-                    console.log(`${customer.id}: ${customer.role}`);                 
+                    // console.log(`${customer.id}: ${customer.role}`);                 
                     const exactRole =customer.role
                     employee.role = exactRole; 
                   
