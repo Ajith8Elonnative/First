@@ -36,15 +36,16 @@ exports.getAllrole = async(req,res)=>{
         customerData.forEach(customer => {
             employeeStaffdata.forEach(employee => {
                 if (customer._id.toString() === employee.staffId) {
-                    console.log(`${customer.customerName}: ${customer.role}`);
+                    console.log(`${customer.id}: ${customer.role}`);
+                    
                     const exactRole = customer.role
-                    res.status(200).json(employeeStaffdata)
+                   
                 }
             });
         });
-
-        
-
+        console.log(employeeStaffdata)
+        res.status(200).json(employeeStaffdata)
+      
     }catch(error){
         res.status(500).json({message:"Internal server error"})
     }
